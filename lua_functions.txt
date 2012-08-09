@@ -1,0 +1,20 @@
+/* Download all content and return it as a string. If content is greater than maxlength, return an error instead */
+string FetchHTTP(hostname:String, pathtodownload:String, maxlength:int
+
+/* Download directly into file. If content-length is greater than maxlength, return an error instead.
+   The output file may have been partly written to in that case, you should explicitely
+   delete it or do other cleanup work. */
+void FetchHTTP(hostname:String, pathtodownload:String, maxlength:int, outputFile:String)
+
+string GetTempFN(prefix:String)
+
+string SHA1(stringtohash:String)
+
+/* Calculate sha1 hash of filename, without loading it into memory all at once */
+string HashFile(filename:String)
+
+/* Apply a binary patch using Colin Percival's bspatch algorithm and code */
+void PatchFile(srcFile:String, dstFile:String, patchFile:String)
+
+/* Copy a file */
+void CopyFile(srcFile:String, dstFile:String)
