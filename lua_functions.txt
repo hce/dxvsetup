@@ -1,3 +1,5 @@
+// WARNING: incomplete!
+
 /* Download all content and return it as a string. If content is greater than maxlength, return an error instead */
 string FetchHTTP(hostname:String, pathtodownload:String, maxlength:int
 
