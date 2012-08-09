@@ -69,8 +69,12 @@ makeList = function(urlPath, listHash, listType)
 	return lList
 end
 
-createDirectories = function(urlpath)
-	dirlist = FetchHTTP(Hostname, Hostport, JoinUrl(UrlPrefix, urlpath), OneMegabyte)
+createDirectories = function(urlpath, correctHash, listType)
+        dirlist = FetchHTTP(Hostname, Hostport, JoinUrl(UrlPrefix, urlpath), OneMegabyte)
+        actualHash = SHA1(dirlist)
+        if actualHash ~= correctHash then
+                error(string.format("Verifying the integrity of %s failed! (Expected %s, got %s)", listType, correctHash, actualHash))
+        end
 	for dirname in string.gmatch(dirlist, "([^\n]+)\n") do
 		dirtocreate = PathJoin(InstallDst, dirname)
 		print(string.format("mkdir %s", dirtocreate))
