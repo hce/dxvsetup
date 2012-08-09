@@ -1,0 +1,5 @@
+This is the code used to create the DXVetery
+(http://dxvetery.hcesperer.org) installer. It uses code from various
+people, including Colin Percival, Julian Seward and the Lua team.
+
+Licensed under the MIT license.
